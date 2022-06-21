@@ -30,14 +30,26 @@ if (num1 > num2) {
 
 const n1 = 40;
 const n2 = 100;
-const n3 = 90;
+const n3 = 150;
 
 if (n1 > n2 && n1 > n3) {
   console.log(n1 + " " + "é maior que" + " " + n2 + " " + "e" + " " + n3);
+} else if (n2 > n1 && n2 > n3) {
+  console.log(n2 + " " + "é maior que" + " " + n1 + " " + "e" + " " + n3);
+} else {
+  console.log(n3 + " " + "é maior que" + " " + n2 + " " + "e" + " " + n1);
 }
-else if (n2 > n1 && n2 > n3) {
-    console.log(n2 + " " + "é maior que" + " " + n1 + " " + "e" + " " + n3);
-}
-else if(n3 > n1 && n3 > n2) {
-    console.log(n3 + " " + "é maior que" + " " + n2 + " " + "e" + " " + n1);
+
+//4. Faça um programa que, dado um valor definido numa constante,
+//  retorne "positive" se esse valor for positivo,
+//   "negative" se for negativo e "zero" caso contrário.
+
+const valor = 300;
+
+if (valor > 0) {
+  console.log("positive");
+} else if (valor < 0) {
+  console.log("negative");
+} else {
+  console.log("zero");
 }
