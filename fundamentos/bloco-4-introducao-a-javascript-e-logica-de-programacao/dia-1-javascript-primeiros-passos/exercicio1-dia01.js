@@ -15,10 +15,13 @@ console.log("resto =", +a % b);
 // Defina no começo do programa duas constantes 
 // com os valores que serão comparados.
 
-const num1 = 50;
+const num1 = 30;
 const num2 = 40;
 
 if(num1 > num2) {
     console.log(num1 + ' ' + "é maior que" + ' ' + num2);
+}
+else {
+    console.log(num2 + ' ' + "é maior que" + ' ' + num1);
 }
 
