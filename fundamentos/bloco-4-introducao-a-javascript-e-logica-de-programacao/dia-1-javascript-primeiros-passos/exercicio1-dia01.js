@@ -53,3 +53,62 @@ if (valor > 0) {
 } else {
   console.log("zero");
 }
+
+//5. Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo.
+//  Retorne true se os ângulos representarem os ângulos de um triângulo e false,
+// caso contrário. Se algum ângulo for inválido o programa deve
+//  retornar uma mensagem de erro.
+
+let ladoTriangulo1 = 100;
+let ladoTriangulo2 = 50;
+let ladoTriangulo3 = 30;
+
+let soma = ladoTriangulo1 + ladoTriangulo2 + ladoTriangulo3;
+let isValid = ladoTriangulo1 > 0 && ladoTriangulo2 > 0 && ladoTriangulo3 > 0;
+
+if (isValid) {
+  if (soma === 180) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+} else {
+  console.log("Erro");
+}
+
+let chess = "Peão";
+
+switch (chess.toLowerCase()) {
+  case "Bispo":
+    console.log("Bispo -> Diagonal, quantas casas quiser");
+    break;
+
+  case "peão":
+    console.log("Peão -> Uma casa a frente, exceto no primeiro movimento.");
+    break;
+
+  case "rainha":
+    console.log(
+      "Rainha -> Pode mover-se em qualquer direção, porém em qualquer direção"
+    );
+    break;
+
+  case "rei":
+    console.log(
+      "Rei -> Pode mover-se em qualquer direção, porém apenas uma casa por vez"
+    );
+    break;
+
+  case "torre":
+    console.log(
+      "Torre -> Move-se em linha reta, tanto na vertical quanto na horizontal, quantas casas quiser."
+    );
+    break;
+
+  case "cavalo":
+    console.log("Cavalo - Movimento de L");
+    break;
+
+  default:
+    console.log("Error");
+}
