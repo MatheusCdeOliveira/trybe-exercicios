@@ -153,6 +153,9 @@ const n3 = 3;
 }
 
 
+// 9. Escreva um programa que defina três números em constantes
+// e retorne true se pelo menos uma das três for ímpar.
+//  Caso contrário, ele retorna false.
 
 
 const n1 = 2;
@@ -164,5 +167,27 @@ const n3 = 7;
 } else {
   console.log(false)
 }
+
+// 10. 
+
+
+const costProduct = 10;
+const costSell = 20;
+if (costProduct < 0 || costSell < 0) {
+  console.log('error, valores negativos.')
+}
+let productImposto = costProduct * 0.20
+let valorCustoTotal = productImposto + costProduct 
+let lucro;
+
+console.log(lucro = (costSell - valorCustoTotal) * 1000);
+
+
+
+
+
+
+
+
 
 
