@@ -76,6 +76,9 @@ if (isValid) {
   console.log("Erro");
 }
 
+//6 Escreva um programa que receba o nome de uma peça de xadrez
+//  e retorne os movimentos que ela faz.
+
 let chess = "Peão";
 
 switch (chess.toLowerCase()) {
@@ -111,4 +114,25 @@ switch (chess.toLowerCase()) {
 
   default:
     console.log("Error");
+}
+
+// 7. Escreva um programa que converta uma nota
+//  dada em porcentagem (de 0 a 100) em conceitos de A a F.
+
+const nota = 70;
+
+if (nota > 100 || nota < 0) {
+  console.log("Erro");
+} else if (nota >= 90) {
+  console.log("A");
+} else if (nota >= 80) {
+  console.log("B");
+} else if (nota >= 70) {
+  console.log("C");
+} else if (nota >= 60) {
+  console.log("D");
+} else if (nota >= 50) {
+  console.log("E");
+} else {
+  console.log("F");
 }
