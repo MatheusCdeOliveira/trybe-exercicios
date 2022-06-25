@@ -1,0 +1,12 @@
+h1, p {
+    text-align: center;
+}
+
+li:hover {
+ background-color: rgb(219, 75, 31);
+ list-style: none;
+}
+
+li:active {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
