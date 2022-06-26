@@ -55,5 +55,50 @@ function maiorArraydeNomes(arrayNames) {
   return maiorNome;
 }
 console.log(
-  maiorArraydeNomes(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana", "Nabukodonosor"])
+  maiorArraydeNomes([
+    "José",
+    "Lucas",
+    "Nádia",
+    "Fernanda",
+    "Cairo",
+    "Joana",
+    "Nabukodonosor",
+  ])
 );
+
+// 5 - Crie uma função que receba um array de inteiros e
+//  retorne o inteiro que mais se repete.
+
+function maisRepetido(numeros) {
+  let contadorNum = 0;
+  let indexRepeticao = 0;
+  let contadorRep = 0;
+  for (index in numeros) {
+    let verifica = numeros[index];
+    for (index2 in numeros) {
+      if (numeros[index2] === verifica) {
+        contadorNum += 1;
+      }
+    }
+    if (contadorNum > contadorRep) {
+      contadorRep = contadorNum;
+      indexRepeticao = index;
+    }
+  }
+
+  return numeros[indexRepeticao];
+}
+
+console.log(maisRepetido([2, 3, 2, 5, 8, 2, 3]));
+
+// 6 - Crie uma função que receba um número natural (número inteiro não negativo)
+//  N e retorne o somatório de todos os números de 1 até N.
+
+function somatorio(number) {
+  let soma = 0;
+  for (let index = 1; index <= number; index += 1) {
+    soma = soma + index;
+  }
+  return soma;
+}
+console.log(somatorio(10));
