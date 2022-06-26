@@ -10,7 +10,7 @@ function verificaPalindromo(string) {
   }
 }
 
-// console.log(verificaPalindromo('arara'))
+console.log(verificaPalindromo("arara"));
 
 // 2 - Crie uma função que receba um array de inteiros
 //   e retorne o índice do maior valor.
@@ -102,3 +102,29 @@ function somatorio(number) {
   return soma;
 }
 console.log(somatorio(10));
+
+// 7 - Crie uma função que receba uma string word e
+// outra string ending. Verifique se a string ending é o
+// final da string word. Considere que a string ending sempre será menor que a string word.
+
+function finalIgual(word, ending) {
+  let palavra = word.split("").reverse("").join("");
+  let resultado = 0;
+  let finalPalavra = ending.split("").reverse("").join("");
+  for (index = 0; index < palavra.length; index += 1) {
+    if (
+      palavra[index] === finalPalavra[index] &&
+      palavra[index + 1] === finalPalavra[index + 1]
+    ) {
+      resultado = true;
+      break;
+    } else {
+      resultado = false;
+    }
+  }
+  return resultado;
+}
+console.log(finalIgual("trybe", "be"));
+
+
+
