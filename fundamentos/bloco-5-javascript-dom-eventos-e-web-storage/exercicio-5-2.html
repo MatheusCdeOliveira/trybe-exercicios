@@ -57,26 +57,69 @@
   </head>
   <body>
     <script>
-     // 1.
-     let boddyDaddy = document.getElementsByTagName('body')[0]
-     let titulo = document.createElement('h1')
-     boddyDaddy.appendChild(titulo)
-     titulo.innerText = 'Exercício 5.2 - JavaScript DOM'
+      // 1.
+      let boddyDaddy = document.getElementsByTagName("body")[0];
+      let titulo = document.createElement("h1");
+      boddyDaddy.appendChild(titulo);
+      titulo.innerText = "Exercício 5.2 - JavaScript DOM";
 
-     // 2
-     let principal = document.createElement('main')
-     boddyDaddy.appendChild(principal)
-     principal.className = 'main-content'
-     // 3
-     let sectionOne = document.createElement('section')
-     principal.appendChild(sectionOne)
-     sectionOne.className = 'center-content'
+      // 2
+      let principal = document.createElement("main");
+      boddyDaddy.appendChild(principal);
+      principal.className = "main-content";
+      // 3
+      let sectionOne = document.createElement("section");
+      principal.appendChild(sectionOne);
+      sectionOne.className = "center-content";
 
-     // 4
-     let firstParagraph = document.createElement('p')
-     principal.appendChild(firstParagraph)
-     firstParagraph.innerText = 'Bom diaa!!'
+      // 4
+      let firstParagraph = document.createElement("p");
+      sectionOne.appendChild(firstParagraph);
+      firstParagraph.innerText = "Bom diaa!!";
 
+      // 5
+      let sectionTwo = document.createElement("section");
+      principal.appendChild(sectionTwo);
+      sectionTwo.className = "left-content";
+
+      //6
+      let sectionThree = document.createElement("section");
+      principal.appendChild(sectionThree);
+      sectionThree.className = "right-content";
+
+      //7
+      let imagem = document.createElement("img");
+      imagem.src = "https://picsum.photos/200";
+      imagem.className = "small-image";
+      sectionTwo.appendChild(imagem);
+
+      // 8
+      let listaUl = document.createElement("ul");
+      sectionThree.appendChild(listaUl);
+
+      let numbers = [
+        "Um",
+        "Dois",
+        "Três",
+        "Quatro",
+        "Cinco",
+        "Seis",
+        "Sete",
+        "Oito",
+        "Nove",
+        "Dez",
+      ];
+      for(index = 0; index < numbers.length; index += 1){
+        let list = document.createElement('li')
+        list.innerText = numbers[index]
+        listaUl.appendChild(list)
+      }
+    // 9
+    for(index = 1; index <= 3 ; index += 1){
+    let tresTitulos = document.createElement('h3')
+    principal.appendChild(tresTitulos)
+    }
+    
     </script>
   </body>
 </html>
