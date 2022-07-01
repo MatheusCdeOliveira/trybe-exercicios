@@ -58,3 +58,21 @@ function buttonHolidays(feriados) {
   divPai.appendChild(botao);
 }
 buttonHolidays("Feriados");
+
+
+function alteraCor() {
+  let feriado = document.querySelectorAll(".holiday");
+  let botaoFeriado = document.querySelector("#btn-holiday");
+  botaoFeriado.addEventListener("click", function() {
+    for (index = 0; index < feriado.length; index += 1) {
+      if (feriado[index].style.backgroundColor === 'white') {
+        feriado[index].style.backgroundColor = 'rgb(238,238,238)'
+      } else {
+        feriado[index].style.backgroundColor = 'white' // condiçao 'else' atribui um background white para feriado e dessa maneira a condiçao 'if' se torna true.
+      }
+      
+    }
+  });
+}
+
+alteraCor();
