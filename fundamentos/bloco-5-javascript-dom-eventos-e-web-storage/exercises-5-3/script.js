@@ -144,3 +144,17 @@ function corLegenda(color){
       elementoMyTasks.appendChild(newElement)
 }
 corLegenda('red')
+
+
+// 9
+function selectTask (){
+  let acharDiv = document.querySelector('.task')
+  acharDiv.addEventListener('click', function(event){
+    if(event.target.className !== 'task selected'){
+      event.target.className = 'task selected'
+    } else {
+      event.target.className = 'task'
+    }
+  })
+}
+selectTask()
