@@ -134,3 +134,13 @@ function newTask(task) {
   divPai.appendChild(novaTarefa);
 }
 newTask("Cozinhar");
+
+// 8 
+function corLegenda(color){
+     let elementoMyTasks = document.querySelector('.my-tasks')
+  let newElement = document.createElement('div')
+     newElement.className = 'task'
+     newElement.style.backgroundColor = color
+      elementoMyTasks.appendChild(newElement)
+}
+corLegenda('red')
