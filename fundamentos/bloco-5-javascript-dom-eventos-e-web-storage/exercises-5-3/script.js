@@ -23,7 +23,7 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 // 1 - Crie um calendário dinamicamente.
- // O array decemberDaysList contém os dois últimos dias de novembro e os dias do mês de dezembro. Sua função deve criar dinamicamente cada dia do calendário e os adicionar dentro da tag <ul>.
+// O array decemberDaysList contém os dois últimos dias de novembro e os dias do mês de dezembro. Sua função deve criar dinamicamente cada dia do calendário e os adicionar dentro da tag <ul>.
 let decemberDaysList = [
   29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
@@ -70,7 +70,7 @@ function alteraCor() {
   botaoFeriado.addEventListener("click", function () {
     for (index = 0; index < feriado.length; index += 1) {
       if (feriado[index].style.backgroundColor === "white") {
-        feriado[index].style.backgroundColor = "rgb(238,238,238)";
+        feriado[index].style.backgroundColor = "red";
       } else {
         feriado[index].style.backgroundColor = "white"; // condiçao 'else' atribui um background white para feriado e dessa maneira a condiçao 'if' se torna true.
       }
@@ -92,18 +92,35 @@ function fridayButton(nomeBotao) {
 fridayButton("Sexta-Feira");
 
 // 5 Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira. Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos dias que são sextas-feiras.
-function showFriday(fridays){
-    let sexta = document.getElementById('btn-friday')
-    let friday = document.getElementsByClassName('friday')
-    sexta.addEventListener('click', function (){
-        for (let index = 0; index < friday.length; index += 1){
-            if (friday[index].innerText !== 'SEXTOU!' ){
-                friday[index].innerText = 'SEXTOU!'
-            } else {
-                friday[index].innerText = fridays[index]
-            }
-        }
-    })
+function showFriday(fridays) {
+  let sexta = document.getElementById("btn-friday");
+  let friday = document.getElementsByClassName("friday");
+  sexta.addEventListener("click", function () {
+    for (let index = 0; index < friday.length; index += 1) {
+      if (friday[index].innerText !== "SEXTOU!") {
+        friday[index].innerText = "SEXTOU!";
+      } else {
+        friday[index].innerText = fridays[index];
+      }
+    }
+  });
 }
 
-showFriday([4, 11, 18, 25])
+showFriday([4, 11, 18, 25]);
+
+// 6 Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+function darZoom() {
+  let dias = document.getElementById('days')
+  dias.addEventListener("mouseover", function (event) {
+    event.target.style.fontSize = "35px";
+  });
+}
+darZoom()
+
+function tirarZoom() {
+  let dias = document.getElementById("days");
+  dias.addEventListener("mouseout", function (event) {
+    event.target.style.fontSize = '20px'
+  });
+}
+tirarZoom()
