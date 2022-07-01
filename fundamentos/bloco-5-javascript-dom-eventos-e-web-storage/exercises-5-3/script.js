@@ -110,17 +110,27 @@ showFriday([4, 11, 18, 25]);
 
 // 6 Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
 function darZoom() {
-  let dias = document.getElementById('days')
+  let dias = document.getElementById("days");
   dias.addEventListener("mouseover", function (event) {
     event.target.style.fontSize = "35px";
   });
 }
-darZoom()
+darZoom();
 
 function tirarZoom() {
   let dias = document.getElementById("days");
   dias.addEventListener("mouseout", function (event) {
-    event.target.style.fontSize = '20px'
+    event.target.style.fontSize = "20px";
   });
 }
-tirarZoom()
+tirarZoom();
+
+// 7 - Implemente uma função que adicione uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+
+function newTask(task) {
+  const divPai = document.querySelector(".my-tasks");
+  const novaTarefa = document.createElement("span");
+  novaTarefa.innerText = task;
+  divPai.appendChild(novaTarefa);
+}
+newTask("Cozinhar");
