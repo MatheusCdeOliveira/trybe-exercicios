@@ -128,3 +128,32 @@ console.log(finalIgual("trybe", "be"));
 
 
 
+
+
+
+
+
+
+
+
+
+function highestCount(arrayNum) {
+  let maiorNum = 0;
+  for(let index in arrayNum){
+    for(let index2 in arrayNum){
+      if(arrayNum[index] === arrayNum[index2]){
+        maiorNum += 1;
+      }
+    }
+  }
+  return maiorNum
+}
+
+
+
+
+let str = 'JS will';
+
+let newStr = str.replace('JS', 'JavaScript');
+
+console.log(newStr)
