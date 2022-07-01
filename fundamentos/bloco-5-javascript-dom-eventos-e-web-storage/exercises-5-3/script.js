@@ -49,3 +49,12 @@ function calendario() {
   }
 }
 calendario();
+
+function buttonHolidays(feriados) {
+  let divPai = document.querySelector(".buttons-container");
+  let botao = document.createElement("button");
+  botao.innerText = feriados;
+  botao.id = "btn-holiday";
+  divPai.appendChild(botao);
+}
+buttonHolidays("Feriados");
