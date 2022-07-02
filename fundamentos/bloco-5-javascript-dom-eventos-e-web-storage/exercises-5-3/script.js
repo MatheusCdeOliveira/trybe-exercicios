@@ -135,26 +135,42 @@ function newTask(task) {
 }
 newTask("Cozinhar");
 
-// 8 
-function corLegenda(color){
-     let elementoMyTasks = document.querySelector('.my-tasks')
-  let newElement = document.createElement('div')
-     newElement.className = 'task'
-     newElement.style.backgroundColor = color
-      elementoMyTasks.appendChild(newElement)
+// 8
+function corLegenda(color) {
+  let elementoMyTasks = document.querySelector(".my-tasks");
+  let newElement = document.createElement("div");
+  newElement.className = "task";
+  newElement.style.backgroundColor = color;
+  elementoMyTasks.appendChild(newElement);
 }
-corLegenda('red')
-
+corLegenda("green");
 
 // 9
-function selectTask (){
-  let acharDiv = document.querySelector('.task')
-  acharDiv.addEventListener('click', function(event){
-    if(event.target.className !== 'task selected'){
-      event.target.className = 'task selected'
+function selectTask() {
+  let acharDiv = document.querySelector(".task");
+  acharDiv.addEventListener("click", function (event) {
+    if (event.target.className !== "task selected") {
+      event.target.className = "task selected";
     } else {
-      event.target.className = 'task'
+      event.target.className = "task";
     }
-  })
+  });
 }
-selectTask()
+selectTask();
+
+// 10
+
+function taskColor() {
+  let dias = document.getElementById('days')
+  let tarefaSelecionada = document.getElementsByClassName('task selected')
+  let taskDiv = document.querySelector(".task");
+  let taskColor = taskDiv.style.backgroundColor;
+  dias.addEventListener("click", function (event) {
+    if (tarefaSelecionada.length > 0 && event.target.style.color !== taskColor) {
+      event.target.style.color = tarefaSelecionada[0].style.backgroundColor
+    } else {
+      event.target.style.color = 'rgb(119,119,119)'
+    }
+  });
+}
+taskColor();
