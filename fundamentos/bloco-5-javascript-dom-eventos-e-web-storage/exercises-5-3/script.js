@@ -135,7 +135,8 @@ function newTask(task) {
 }
 newTask("Cozinhar");
 
-// 8
+// 8 Implemente uma função que adicione uma legenda com cor para a tarefa.
+
 function corLegenda(color) {
   let elementoMyTasks = document.querySelector(".my-tasks");
   let newElement = document.createElement("div");
@@ -145,7 +146,7 @@ function corLegenda(color) {
 }
 corLegenda("green");
 
-// 9
+// 9 Implemente uma função que selecione uma tarefa.
 function selectTask() {
   let acharDiv = document.querySelector(".task");
   acharDiv.addEventListener("click", function (event) {
@@ -158,7 +159,7 @@ function selectTask() {
 }
 selectTask();
 
-// 10
+// 10 Implemente uma função que atribua a cor da tarefa ao dia do calendário.
 
 function taskColor() {
   let dias = document.getElementById('days')
@@ -174,3 +175,35 @@ function taskColor() {
   });
 }
 taskColor();
+
+// Bônus  Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+function adicionarCompromissos (){
+  const buttonAdd = document.getElementById('btn-add')
+  const inputCompromisso = document.getElementById('task-input')
+  const compromissoList = document.querySelector('.task-list')
+
+
+  buttonAdd.addEventListener('click', function (){
+    const algoDigitado = inputCompromisso.value
+    if(algoDigitado === ''){
+      alert('Você precisa digitar algo.')
+    } else {
+      let novoElemento = document.createElement('li')
+    novoElemento.innerText = algoDigitado
+    compromissoList.appendChild(novoElemento)
+    inputCompromisso.value = ''
+    }
+  })
+
+ inputCompromisso.addEventListener('keyup', function(event){
+   const algoDigitado = inputCompromisso.value
+   if(algoDigitado !== '' && event.key === 'Enter'){
+     let novoElemento = document.createElement('li')
+     novoElemento.innerText = algoDigitado
+     compromissoList.appendChild(novoElemento)
+     inputCompromisso.value = ''
+  } 
+ })
+
+}
+adicionarCompromissos()
