@@ -39,8 +39,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [x] 5-1: _JavaScript - DOM e seletores_
 - [x] 5-2: _JavaScript - Trabalhando com elementos_
+<<<<<<< HEAD
 - [x] 5-3: _JavaScript - Eventos_
 - [x] 5-4: _JavaScript - Web Storage_
+=======
+- [x] 5-3: _JavaScript - Eventos_
+- [x] 5-4: _JavaScript - Web Storage_
+>>>>>>> 235f269eda6a56fdf2fba98e9845d61c8e5fa4b2
 - [ ] 5-5: _[Projeto - Meme Generator]()_
 - [x] 5-6: _[Projeto - Arte com Pixels]()_
 - [ ] 5-7: _[Projeto - Lista de tarefas]()_
