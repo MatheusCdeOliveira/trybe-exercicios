@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de viagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="imagem">
+    <img src="férias-805x503.jpg" alt="imagem de ferias">
+</div>
+  <header class="cabecalho">
+    <form action="" method="get">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+    <label for="input-text">Nome:</label>
+    <input type="text" placeholder="Digite seu nome" minlength="10" maxlength="40" id="input-text">
+    <br>
+    <label for="input-email">Email:</label>
+    <input type="email" name="e-mail" placeholder="Digite seu e-mail" minlength="10" maxlength="50" id="input-email">
+</fieldset>
+<section class="select-destiny">
+    <fieldset>
+        <legend>Destino preferido</legend>  
+    <input type="radio" name="opçoes" value="option1" id="input-radio" required>
+    <label for="input-radio">Cidade</label>
+    <input type="radio" name="opçoes" value="option2" id="input-radio2" required>
+    <label for="input-radio2">Campo</label>
+    <input type="radio" name="opçoes" value="option3" id="input-radio3" required>
+    <label for="input-radio3">Praia</label>
+    <input type="radio" name="opçoes" value="option4" id="input-radio4" required>
+    <label for="input-radio4">Montanhas</label>
+</fieldset>
+</section>
+<fieldset>
+    <legend>Por que devo ganhar</legend>
+ <div class="line-content">
+    <span>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</span>
+    <div class="line-content">
+    <textarea id="text-area" name="area-texto" placeholder="Digite aqui sua resposta" maxlength="510" cols="30" rows="5"></textarea>
+</fieldset>
+</div>
+ </div>
+ <br>
+ <fieldset>
+    <legend>Data da viagem</legend>
+ <div class="line-content">
+    <label for="input-data">Data:</label>
+    <input type="date" name="data" id="input-data" required>
+ </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Termos</legend>
+ <div class="line-content">
+    <label for="input-check">Concordo 1</label>
+    <input type="checkbox" name="check" id="input-check">
+ </div>
+ <div class="line-content">
+    <label for="input-check2">Concordo 2</label>
+    <input type="checkbox" name="check2" id="input-check2">
+ </div> 
+</fieldset>
+</header>
+<div class="btn-div">
+<button class="btn" type="submit">Enviar</button>
+<button class="btn" type="reset">Apagar</button>  
+</div>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

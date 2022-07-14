@@ -66,7 +66,7 @@ console.log(
   "O livro favorito de",
   leitor.fullName,
   "se chama",
-  leitor.livrosFavoritos[0].titulo
+  leitor.livrosFavoritos[0].autor
 );
 
 // 7 .- Adicione um novo livro favorito na chave livrosFavoritos, que é um array. Atribua a esta chave um objeto contendo as seguintes informações:
