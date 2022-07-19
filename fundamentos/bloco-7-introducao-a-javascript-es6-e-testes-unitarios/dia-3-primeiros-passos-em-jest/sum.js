@@ -58,4 +58,26 @@ const techList = (arr, string) => {
   return arrObject;
 };
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList };
+const hydrate = (string) => {
+  let quantidade = 0;
+  for (index of string) {
+    if (index >= 1 && index <= 9) {
+      let num = parseInt(index);
+      quantidade += num;
+    }
+  }
+  if (quantidade === 1) {
+    return `${quantidade} copo de água`;
+  }
+  return `${quantidade} copos de água`;
+};
+
+module.exports = {
+  sum,
+  myRemove,
+  myFizzBuzz,
+  encode,
+  decode,
+  techList,
+  hydrate,
+};
