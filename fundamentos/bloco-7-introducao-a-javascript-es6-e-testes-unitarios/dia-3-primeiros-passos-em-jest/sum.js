@@ -46,4 +46,16 @@ const decode = (frase2) => {
   return result2;
 };
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode };
+const techList = (arr, string) => {
+  if (arr.length === 0) {
+    return "Vazio!";
+  }
+  let arrObject = [];
+  arr = arr.sort();
+  for (let index of arr) {
+    arrObject.push({ tech: index, name: string });
+  }
+  return arrObject;
+};
+
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList };

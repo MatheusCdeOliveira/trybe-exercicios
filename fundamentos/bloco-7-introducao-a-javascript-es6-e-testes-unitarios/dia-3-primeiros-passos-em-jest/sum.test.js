@@ -1,5 +1,12 @@
 // exercicio 1
-const { sum, myRemove, myFizzBuzz, encode, decode } = require("./sum.js");
+const {
+  sum,
+  myRemove,
+  myFizzBuzz,
+  encode,
+  decode,
+  techList,
+} = require("./sum.js");
 
 describe("Testes da função sum", () => {
   test("Verifica se a soma de (4, 5) retorna 9", () => {
@@ -59,5 +66,45 @@ describe("Testes da função encode e decode", () => {
   it("Teste se encode e decode são funções", () => {
     expect(typeof encode).toBeTruthy();
     expect(typeof decode).toBeTruthy();
+  });
+});
+
+// exercicio 5
+
+describe("Testa a função techList", () => {
+  it("Testa se a função techList é definida", () => {
+    expect(techList).toBeDefined();
+  });
+  it("Testa se techList é uma função", () => {
+    expect(typeof techList).toBe("function");
+  });
+  it("Lista com 5 tecnologias deve retornar uma lista de objetos ordenados", () => {
+    expect(
+      techList(["React", "Jest", "HTML", "CSS", "JavaScript"], "Lucas")
+    ).toEqual([
+      {
+        tech: "CSS",
+        name: "Lucas",
+      },
+      {
+        tech: "HTML",
+        name: "Lucas",
+      },
+      {
+        tech: "JavaScript",
+        name: "Lucas",
+      },
+      {
+        tech: "Jest",
+        name: "Lucas",
+      },
+      {
+        tech: "React",
+        name: "Lucas",
+      },
+    ]);
+  });
+  it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+    expect(techList([], "Lucas")).toBe("Vazio!");
   });
 });
