@@ -1,6 +1,5 @@
-// const { default: test } = require("node:test");
-// const { describe } = require("yargs");
-const { sum, myRemove } = require("./sum.js");
+// exercicio 1
+const { sum, myRemove, myFizzBuzz, encode, decode } = require("./sum.js");
 
 describe("Testes da função sum", () => {
   test("Verifica se a soma de (4, 5) retorna 9", () => {
@@ -16,6 +15,7 @@ describe("Testes da função sum", () => {
   });
 });
 
+// exercicio 2
 describe("Testes da função myRemove", () => {
   it("Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado", () => {
     expect(myRemove([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
@@ -27,5 +27,37 @@ describe("Testes da função myRemove", () => {
 
   it("Verifique se a chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado", () => {
     expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
+  });
+});
+
+// exercicio 3
+describe("Testes da função fizzbuzz", () => {
+  it("Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado", () => {
+    expect(myFizzBuzz(15)).toMatch("fizzbuzz");
+  });
+
+  it("Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado", () => {
+    expect(myFizzBuzz(6)).toMatch("fizz");
+  });
+
+  it("Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado", () => {
+    expect(myFizzBuzz(10)).toMatch("buzz");
+  });
+
+  it("Faça uma chamada com um número que não é divisível por 3 ou 5 e verifique se o retorno é o esperado", () => {
+    expect(myFizzBuzz(13)).toBe(13);
+  });
+
+  it("Faça uma chamada com um parâmetro que não é um número e verifique se o retorno é o esperado", () => {
+    expect(myFizzBuzz("10")).toBeFalsy();
+  });
+});
+
+// exercicio 4
+
+describe("Testes da função encode e decode", () => {
+  it("Teste se encode e decode são funções", () => {
+    expect(typeof encode).toBeTruthy();
+    expect(typeof decode).toBeTruthy();
   });
 });
