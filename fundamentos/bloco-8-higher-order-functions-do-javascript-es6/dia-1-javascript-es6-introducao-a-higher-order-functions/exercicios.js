@@ -17,11 +17,10 @@ const newEmployees = (callback) => {
 
 console.log(newEmployees(generator));
 
-// 2 - Desenvolva uma HOF que retorna o resultado de um sorteio. 
-// Esta HOF irá gerar um número aleatório entre 1 e 5 recebendo como parâmetros o número apostado 
-// e uma função que checa se o número apostado é igual ao número sorteado. 
+// 2 - Desenvolva uma HOF que retorna o resultado de um sorteio.
+// Esta HOF irá gerar um número aleatório entre 1 e 5 recebendo como parâmetros o número apostado
+// e uma função que checa se o número apostado é igual ao número sorteado.
 // O retorno da sua HOF deve ser uma string (Ex: "Tente novamente" ou "Parabéns você ganhou").
-
 
 const verifyBet = (nAposta, nSorteado) => {
   if (nAposta === nSorteado) {
@@ -37,3 +36,31 @@ const sorteio = (nAposta, callback) => {
 };
 
 console.log(sorteio(3, verifyBet));
+
+// 3  Crie uma HOF que receberá três parâmetros:
+// O primeiro será um array de respostas corretas (Gabarito);
+// O segundo será um array contendo as respostas fornecidas por uma pessoa estudante;
+// O terceiro é uma função que compara os dois arrays e então dá uma pontuação baseada nos acertos.
+const RIGHT_ANSWERS = ["A", "C", "B", "D", "A", "A", "D", "A", "D", "C"];
+const STUDENT_ANSWERS = ["A", "N.A", "B", "D", "A", "C", "N.A", "A", "D", "B"];
+
+const compare = (rightAnswers, studentAnswers) => {
+  if (rightAnswers === studentAnswers) {
+    return 1;
+  }
+  if (studentAnswers === "N.A") {
+    return 0;
+  }
+  return -0.5;
+};
+
+const countAnswers = (rightAnswers, studentAnswers, callback) => {
+  let pontuacao = 0;
+  for (let index = 0; index < rightAnswers.length; index += 1) {
+    callback(rightAnswers[index], studentAnswers[index]);
+    pontuacao += callback(rightAnswers[index], studentAnswers[index]);
+  }
+  return `Resultado: ${pontuacao} pontos.`;
+};
+
+console.log(countAnswers(RIGHT_ANSWERS, STUDENT_ANSWERS, compare));
