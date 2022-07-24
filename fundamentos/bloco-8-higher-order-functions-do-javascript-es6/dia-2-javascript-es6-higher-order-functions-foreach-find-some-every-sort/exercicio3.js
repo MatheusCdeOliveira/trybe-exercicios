@@ -62,13 +62,9 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracter
+const findFirstBook = (array) => {
+  return array.find((book) => book.name.length === 26);
+};
 
-// 🚀 1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
-
-function authorBornIn1947(array, age) {
-  const livroEncontrado = array.find((book) => book.author.birthYear === age);
-  return livroEncontrado.author.name;
-}
-
-console.log(authorBornIn1947(books, 1947));
-
+console.log(findFirstBook(books));

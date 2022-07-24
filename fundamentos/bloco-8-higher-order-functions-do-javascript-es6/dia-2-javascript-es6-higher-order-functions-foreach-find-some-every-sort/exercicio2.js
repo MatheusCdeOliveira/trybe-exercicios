@@ -41,7 +41,7 @@ const books = [
   },
   {
     id: 5,
-    name: "A Coisa",
+    name: "ola",
     genre: "Terror",
     author: {
       name: "Stephen King",
