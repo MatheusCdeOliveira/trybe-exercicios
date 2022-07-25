@@ -62,13 +62,15 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-
+// 🚀 2 - Construa um array de objetos a partir do array de livros. Cada objeto deve conter uma propriedade author, com o nome da pessoa autora do livro, e uma propriedade age com a idade dessa pessoa quando o livro foi lançado. O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando suas idades quando o livro foi lançado.
 const nameAndAge = (array) => {
-   return array.map((element) => {
-    const idade = element.releaseYear - element.author.birthYear;
-    const finalObject = { age: idade, author: element.author.name };
-    return finalObject; // retorna o objeto formado para o map
-  }).sort((a, b) => a.age - b.age); // com o objeto pronto, ele ordena
+  return array
+    .map((element) => {
+      const idade = element.releaseYear - element.author.birthYear;
+      const finalObject = { age: idade, author: element.author.name };
+      return finalObject; // retorna o objeto formado para o map
+    })
+    .sort((a, b) => a.age - b.age); // com o objeto pronto, ele ordena
 };
 
 console.log(nameAndAge(books));
