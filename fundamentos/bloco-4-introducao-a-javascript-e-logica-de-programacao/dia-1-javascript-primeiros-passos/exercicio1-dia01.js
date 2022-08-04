@@ -137,57 +137,43 @@ if (nota > 100 || nota < 0) {
   console.log("F");
 }
 
-
-// 8. Escreva um programa que defina três números em constantes e 
-//  retorne true se pelo menos uma das três for par. 
+// 8. Escreva um programa que defina três números em constantes e
+//  retorne true se pelo menos uma das três for par.
 //  Caso contrário, ele retorna false.
 
 const n1 = 1;
 const n2 = 5;
 const n3 = 3;
 
- if (n1 % 2 === 0|| n2 % 2 === 0 || n3 % 2 === 0) {
-  console.log(true)
+if (n1 % 2 === 0 || n2 % 2 === 0 || n3 % 2 === 0) {
+  console.log(true);
 } else {
-  console.log(false)
+  console.log(false);
 }
-
 
 // 9. Escreva um programa que defina três números em constantes
 // e retorne true se pelo menos uma das três for ímpar.
 //  Caso contrário, ele retorna false.
 
-
 const n1 = 2;
 const n2 = 4;
 const n3 = 7;
 
- if (n1 % 2 !== 0|| n2 % 2 !== 0 || n3 % 2 !== 0) {
-  console.log(true)
+if (n1 % 2 !== 0 || n2 % 2 !== 0 || n3 % 2 !== 0) {
+  console.log(true);
 } else {
-  console.log(false)
+  console.log(false);
 }
 
-// 10. 
-
+// 10.
 
 const costProduct = 10;
 const costSell = 20;
 if (costProduct < 0 || costSell < 0) {
-  console.log('error, valores negativos.')
+  console.log("error, valores negativos.");
 }
-let productImposto = costProduct * 0.20
-let valorCustoTotal = productImposto + costProduct 
+let productImposto = costProduct * 0.2;
+let valorCustoTotal = productImposto + costProduct;
 let lucro;
 
-console.log(lucro = (costSell - valorCustoTotal) * 1000);
-
-
-
-
-
-
-
-
-
-
+console.log((lucro = (costSell - valorCustoTotal) * 1000));
