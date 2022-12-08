@@ -16,7 +16,7 @@ const readFile = async () => {
     const data = await fs.readFile(moviesPath);
     return JSON.parse(data);
   } catch (err) {
-    console.log(`O arquivo não pode ser lido: ${err}`);
+    console.error(`O arquivo não pode ser lido: ${err}`);
   }
 };
 
@@ -41,6 +41,26 @@ app.get('/movies', async (_req, res) => {
   try {
    const movies = await readFile();
    res.status(200).json(movies);
+  } catch (err) {
+   res.status(500).send({ message: err.message });
+  }
+});
+
+// 🚀 Exercício 4
+// Crie um endpoint do tipo POST com a rota /movies, para cadastrar um novo filme no JSON.
+
+app.post('/movies', async (req, res) => {
+  try {
+    const movies = await readFile();
+    const { movie, price } = req.body;
+    const newMovie = {
+      id: movies.length + 1,
+      movie,
+      price,
+    };
+    const allMovies = JSON.stringify([...movies, newMovie]);
+    await fs.writeFile(moviesPath, allMovies);
+   res.status(201).json(newMovie);
   } catch (err) {
    res.status(500).send({ message: err.message });
   }
