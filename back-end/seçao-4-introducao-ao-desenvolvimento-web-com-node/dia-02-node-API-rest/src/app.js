@@ -66,5 +66,42 @@ app.post('/movies', async (req, res) => {
   }
 });
 
+// 🚀 Exercício 5
+// Crie um endpoint do tipo PUT com a rota /movies/:id, que possa editar informações de um filme do JSON.
+
+app.put('/movies/:id', async (req, res) => {
+  try {
+    const movies = await readFile();
+    const { id } = req.params;
+    const { movie, price } = req.body;
+   const editedMovie = movies.find((movieItem) => movieItem.id === Number(id));
+    editedMovie.id = Number(id);
+    editedMovie.movie = movie;
+    editedMovie.price = price;
+   const updatedMovie = JSON.stringify([...movies]);
+    await fs.writeFile(moviesPath, updatedMovie);
+   res.status(200).json(editedMovie);
+  } catch (err) {
+   res.status(500).send({ message: err.message });
+  }
+});
+
+// 🚀 Exercício 6
+// Crie um endpoint do tipo DELETE com a rota /movies/:id que possa deletar um filme do JSON.
+
+app.delete('/movies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const movies = await readFile();
+    const movieIndex = movies.findIndex((movieItem) => movieItem.id === Number(id));
+    movies.splice(movieIndex, 1);
+    const updatedMovies = JSON.stringify(movies);
+    await fs.writeFile(moviesPath, updatedMovies);
+    res.status(204).end();
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
 module.exports = {
   app };
